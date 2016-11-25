@@ -9,7 +9,7 @@
     "build-css": "postcss -c postcss.config.json",
     "build-js:dev": "npm run build-js -- -w",
     "build-css:dev": "npm run build-css -- -w",
-    "build-html:dev": "watch 'npm run build-html' src/ --filter=html-filter.js",
+    "build-html:dev": "watch 'npm run build-html' src/ --filter=html-only.js",
     "test": "npm test",
     "start": "browser-sync start -s dist -f dist/*"
   },
