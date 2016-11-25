@@ -1,7 +1,7 @@
 import babel from 'rollup-plugin-babel'
 
 export default {
-  entry: 'src/main.js',
+  entry: 'src/js/main.js',
   dest: 'dist/main.js',
   format: 'umd',
   moduleName: 'zero',

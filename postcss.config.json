@@ -3,7 +3,7 @@
     "postcss-import",
     "postcss-cssnext"
   ],
-  "input": "src/main.css",
+  "input": "src/css/main.css",
   "output": "dist/main.css",
   "local-plugins": true,
   "map": "file"
