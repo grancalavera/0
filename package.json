@@ -5,8 +5,8 @@
   "main": "dist/main.js",
   "scripts": {
     "clean": "rm -rf dist && mkdir dist",
-    "build:js:lib": "rollup -c config/rollup.js --environment entry:lib",
-    "build:js:main": "rollup -c config/rollup.js --environment entry:app",
+    "build:js:lib": "rollup -c config/rollup.js --environment entry:lib.js",
+    "build:js:main": "rollup -c config/rollup.js --environment entry:app.js",
     "build:html": "cp src/index.html dist/",
     "build:css": "postcss -c config/postcss.json",
     "dev:js": "npm run build:js:main -- -w",

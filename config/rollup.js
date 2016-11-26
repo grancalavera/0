@@ -1,8 +1,10 @@
 import babel from 'rollup-plugin-babel'
 
+const entry = process.env.entry
+
 export default {
-  entry: `src/js/${process.env.entry}.js`
-, dest: `dist/${process.env.entry}.js`
+  entry: `src/js/${ entry }`
+, dest: `dist/${ entry }`
 , format: 'umd'
 , moduleName: 'zero'
 , sourceMap: true
