@@ -3,7 +3,10 @@ import './helpers/browser'
 import { helloWorld } from '../src/lib'
 
 test('helloWorld produces a side effect', t => {
+
   const target = document.createElement('div')
+  t.falsy(target.innerHTML, 'No side effect should have been produced')
+
   helloWorld(target)
-  t.is(target.innerHTML, '<h1>Hello World</h1>')
+  t.truthy(target.innerHTML, 'A side effect should have been produced')
 })
