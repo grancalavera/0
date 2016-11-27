@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "description": "Before the first one",
   "main": "dist/main.js",
+  "author": "",
+  "license": "MIT",
   "scripts": {
-    "clean": "rm -rf dist && mkdir dist",
     "build:js:lib": "rollup -c config/rollup.js --environment entry:lib.js",
     "build:js:app": "rollup -c config/rollup.js --environment entry:app.js",
     "build:html": "cp src/index.html dist/",
@@ -13,12 +14,15 @@
     "dev:css": "npm run build:css -- -w",
     "dev:html": "watch 'npm run build:html' src --filter=config/watch-filter.js",
     "dev:server": "browser-sync start -s dist -f dist/*",
-    "start": "npm run clean && npm-run-all --parallel dev:*",
+    "dev:test": "npm run test -- -w",
+    "clean": "rm -rf dist && mkdir dist",
+    "start": "npm run clean && npm run build && npm-run-all --parallel dev:*",
     "build": "npm run clean && npm-run-all --parallel build:**",
     "test": "ava"
   },
-  "author": "",
-  "license": "MIT",
+  "dependencies": {
+    "d3-selection": "^1.0.3"
+  },
   "devDependencies": {
     "ava": "^0.17.0",
     "babel-plugin-external-helpers": "^6.18.0",
@@ -41,6 +45,8 @@
     "require": "babel-register"
   },
   "babel": {
-    "presets": ["es2015-node6"]
+    "presets": [
+      "es2015-node6"
+    ]
   }
 }

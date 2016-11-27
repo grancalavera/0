@@ -1,10 +1,9 @@
 import test from 'ava'
-import jsdom from 'jsdom'
-import { doEffect } from '../src/js/lib'
+import './helpers/browser'
+import { helloWorld } from '../src/lib'
 
-global.document = jsdom.jsdom()
-global.window = global.document.defaultView
-
-test('doEffect is a function', t => {
-  t.pass()
+test('helloWorld produces a side effect', t => {
+  const target = document.createElement('div')
+  helloWorld(target)
+  t.is(target.innerHTML, '<h1>Hello World</h1>')
 })
