@@ -16,9 +16,9 @@
     "dev:server": "browser-sync start -s dist -f dist/*",
     "dev:test": "npm run test -- -w",
     "clean": "rm -rf dist && mkdir dist",
-    "start": "npm run clean && npm run build && npm-run-all --parallel dev:*",
     "build": "npm run clean && npm-run-all --parallel build:**",
-    "test": "ava"
+    "test": "ava",
+    "start": "npm run clean && npm run build && npm-run-all --parallel dev:*"
   },
   "dependencies": {
     "d3-selection": "^1.0.3"
