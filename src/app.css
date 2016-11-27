@@ -1,2 +1,6 @@
 @import "./hello-world.css";
 
+body {
+  font-family: sans-serif;
+}
+

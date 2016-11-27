@@ -9,7 +9,7 @@
     "build:js:lib": "rollup -c config/rollup.js --environment entry:lib.js",
     "build:js:app": "rollup -c config/rollup.js --environment entry:app.js",
     "build:html": "cp src/index.html dist/",
-    "build:css": "postcss -c config/postcss.json",
+    "build:css": "postcss -c config/postcss.js",
     "dev:js": "npm run build:js:app -- -w",
     "dev:css": "npm run build:css -- -w",
     "dev:html": "watch 'npm run build:html' src --filter=config/watch-filter.js",
@@ -21,7 +21,8 @@
     "start": "npm run clean && npm run build && npm-run-all --parallel dev:*"
   },
   "dependencies": {
-    "d3-selection": "^1.0.3"
+    "d3-selection": "^1.0.3",
+    "normalize.css": "^5.0.0"
   },
   "devDependencies": {
     "ava": "^0.17.0",
